@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head> 
+        <title>RPS Game</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <!-- My Link JS & Css Files Of Game-->
+        <link rel="stylesheet" href="resources/css_game_page.css">
+    </head>
+    <body class="bodyTag" onload="diff_Selector_Game()">
+        <br />
+        <div id="game_Screen_page" class="container invisible w-55">
+            <!-- Logo Area of Game -->
+            <div class="LogoArea text-center">
+                <img id="logoIMG" class="img4" src="resources/images/logo_1.png" alt="Image of Rock Paper Scissor Logo" height="150" width="200">
+                <h1 id="gameTitle">RPS Game!</h1>
+                
+                <h2 id="win_Label_ID">Press any button to Play</h2>
+                <button id="new_Game_Button_ID"  class="btn btn-danger hideMe  colorbtn" onclick="start_New_Game_Play()">New Game</button>
+            </div>
+            <br /><br />
+            <!-- Play area of Game -->
+            <div class="row">
+                <!-- Player Side OF Game -->
+                <div class="PlayerArea col-md-3">
+                    <h2>Player Score: </h2>
+                    <h2 id="player_Score">0</h2>
+                    <div class="progress">
+                        <div id="player_Progress_Bar_ID" class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="5" style="width: 0%;">
+                            0/5
+                        </div>
+                    </div>
+                    <br />
+                    <button class="btn" id="rock_Button_ID" onclick="image_Clicker(1)"><img src="resources/images/1.png" alt="Rock" width="50" height="50">Rock</button>
+                    <br />
+                    <button class="btn" id="paper_Button_ID" onclick="image_Clicker(2)"><img src="resources/images/2.png" alt="Paper" width="50" height="50">Paper</button>
+                    <br />
+                    <button class="btn" id="scissor_Button_ID" onclick="image_Clicker(3)"><img src="resources/images/3.png" alt="Scissors" width="50" height="50">Scissor</button>
+                </div>
+                <!-- Middle Images Area Of Game-->
+                <div class="imageArea col-md-6">
+                    <br /><br /><br />
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <img id="pIMG" class="mainImages" src="resources/images/3.png" alt="AI Image" height="200" width="200">
+                        </div>
+                        <div class="col-sm-6">
+                            <img id="aiIMG" class="mainImages" src="resources/images/1.png" alt="Player Image" height="200" width="200">
+                        </div>
+                    </div>
+                </div>
+                <!-- Bot Side Of Game-->
+                <div class="AIArea col-md-3 text-right">
+                    <h2>Bot Score: </h2>
+                    <h2 id="bot_Score">0</h2>
+                    <div class="progress">
+                        <div id="bot_Progress_Bar_ID" class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="5" style="width: 0%;">
+                            0/5
+                        </div>
+                    </div>
+                    <br />
+                    <label id="rockLabel"><img src="resources/images/1.png" alt="Rock" width="50" height="50">Rock</label>
+                    <br />
+                    <label id="paperLabel"><img src="resources/images/2.png" alt="Paper" width="50" height="50">Paper</label>
+                    <br />
+                    <label id="scissorLabel"><img src="resources/images/3.png" alt="Scissors" width="50" height="50">Scissor</label>
+                </div>
+            </div>
+        </div>
+        <br />
+        <div id="game_Screen_Bottom_page" class="container invisible">
+            <div class="row">
+                <div class="col-lg-3"></div>
+                <div class="col-lg-6 text-center">
+                    <button class="btn btn-warning" onclick="change_Diff_Game()" id="diff_Btn_ID">Difficulty: Easy</button>
+                    <h5>Rounds: </h5>        
+                    <h5 id="count_Label_Obj">0</h5>
+                </div>
+                <div class="col-lg-3"></div>
+            </div>
+        </div>
+        <!--New Game Screen Of Game-->
+        <div id="new_Game_Screen_page" class="container">
+            <button id="firstGameButton" class="btn btn-lg btn-success newBtnClassColor">New Game</button>
+        </div>
+
+
+
+        <!-- Modal Below this line Of Game-->
+        <div class="modal" id="mainModal">
+            <div class="modal-dialog">
+              <div class="modal-content">
+          
+                <!-- Modal Header Of Game-->
+                <div class="modal-header">
+                  <h4 class="modal-title">Difficulty Selection</h4>
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+          
+                <!-- Modal body Of Game-->
+                <div class="modal-body">
+                    <label>Select Difficulty Level: </label>
+                    <!-- Add Radio Buttons Here Of Game -->
+                </div>
+          
+                <!-- Modal footer Of Game -->
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary" data-dismiss="modal">Confirm</button>
+                </div>
+              </div>
+            </div>
+        </div>
+
+
+    <script type="text/javascript" src="resources/rps_game_scripts.js"></script>
+    </body>
+    <footer class="footerTag">
+        <div class="text-center">
+            <label class="footertxt" id="footerDescription">RPS Game(Created By H.M)</label>
+        </div>
+    </footer>
+</html>
